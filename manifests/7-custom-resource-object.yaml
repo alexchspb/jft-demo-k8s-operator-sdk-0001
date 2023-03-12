@@ -1,0 +1,14 @@
+apiVersion: apps.alexchspb.ru/v1
+kind: JftDemoOperatorSDK
+metadata:
+  labels:
+    app.kubernetes.io/name: jftdemooperatorsdk
+    app.kubernetes.io/instance: jftdemooperatorsdk-sample
+    app.kubernetes.io/part-of: jft-demo-k8s-operator-sdk-0001
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: jft-demo-k8s-operator-sdk-0001
+  name: jftdemooperatorsdk-sample
+  namespace: jftdemooperatorsdks
+spec:
+  image: "alexchspb/jft-app-py-0001:930d1750"
+  size: 1

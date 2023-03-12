@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jftdemooperatorsdks-operator-deployment
+  namespace: jftdemooperatorsdks
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jftdemooperatorsdks-operator-controller
+  template:
+    metadata:
+      labels:
+        app: jftdemooperatorsdks-operator-controller
+    spec:
+      containers:
+        - name: jftdemooperatorsdks-operator-controller
+          image: alexchspb/jft-demo-k8s-operator-sdk-0001:latest
+          imagePullPolicy: Always
+      serviceAccountName: jftdemooperatorsdks-controller-manager
